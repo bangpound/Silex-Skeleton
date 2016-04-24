@@ -45,9 +45,8 @@ What's inside?
 
 The Silex Skeleton is configured with the following service providers:
 
-* `ValidatorServiceProvider`_ - Provides a service for validating data. It is
-  most useful when used with the FormServiceProvider, but can also be used
-  standalone.
+* `UrlGeneratorServiceProvider`_ - Provides a service for generating URLs for
+  named routes.
 
 * `ServiceControllerServiceProvider`_ - As your Silex application grows, you
   may wish to begin organizing your controllers in a more formal fashion.
@@ -69,7 +68,7 @@ Enjoy!
 
 .. _Composer: http://getcomposer.org/
 .. _Documentation: http://silex.sensiolabs.org/documentation
-.. _ValidatorServiceProvider: http://silex.sensiolabs.org/doc/master/providers/validator.html
+.. _UrlGeneratorServiceProvider: http://silex.sensiolabs.org/doc/master/providers/url_generator.html
 .. _ServiceControllerServiceProvider: http://silex.sensiolabs.org/doc/master/providers/service_controller.html
 .. _TwigServiceProvider: http://silex.sensiolabs.org/doc/master/providers/twig.html
 .. _WebProfilerServiceProvider: http://github.com/silexphp/Silex-WebProfiler
