@@ -18,6 +18,15 @@ Silex uses `Composer`_ to ease the creation of a new project:
 
 Composer will create a new Silex project under the `path/to/install` directory.
 
+If your application will serve static assets using the PHP built-in web server
+during development, you should add these lines to the top of `web/index_dev.php`:
+
+.. code-block:: php
+
+    if (php_sapi_name() === 'cli-server' && is_file(__DIR__.preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']))) {
+        return false;
+    }
+
 Browsing the Demo Application
 -----------------------------
 
@@ -63,12 +72,18 @@ The Silex Skeleton is configured with the following service providers:
   your controllers can be created as services, giving you the full power of
   dependency injection and lazy loading.
 
+* `HttpFragmentServiceProvider`_ - Provides fragment rendering in templates.
+
+* `AssetServiceProvider`_ - Provides versioned URLs of front end assets.
+
 * `TwigServiceProvider`_ - Provides integration with the Twig template engine.
 
 * `WebProfilerServiceProvider`_ - Enable the Symfony web debug toolbar and
   the Symfony profiler in your Silex application when developing.
 
 * `MonologServiceProvider`_ - Enable logging in the development environment.
+
+* `VarDumperServiceProvider`_ - Integrates Twig and the VarDumper component.
 
 Read the `Providers`_ documentation for more details about Silex Service
 Providers.
@@ -79,7 +94,10 @@ Enjoy!
 .. _Documentation: http://silex.sensiolabs.org/documentation
 .. _UrlGeneratorServiceProvider: http://silex.sensiolabs.org/doc/master/providers/url_generator.html
 .. _ServiceControllerServiceProvider: http://silex.sensiolabs.org/doc/master/providers/service_controller.html
+.. _HttpFragmentServiceProvider: http://silex.sensiolabs.org/doc/master/providers/http_fragment.html
+.. _AssetServiceProvider: http://silex.sensiolabs.org/doc/master/providers/asset.html
 .. _TwigServiceProvider: http://silex.sensiolabs.org/doc/master/providers/twig.html
 .. _WebProfilerServiceProvider: http://github.com/silexphp/Silex-WebProfiler
 .. _MonologServiceProvider: http://silex.sensiolabs.org/doc/master/providers/monolog.html
+.. _VarDumperServiceProvider: http://silex.sensiolabs.org/doc/master/providers/var-dumper.html
 .. _Providers: http://silex.sensiolabs.org/doc/providers.html
