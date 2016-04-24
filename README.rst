@@ -33,6 +33,14 @@ command:
 
 Then, browse to http://localhost:8888/index_dev.php/
 
+Running tests
+-------------
+
+.. code-block:: console
+
+    $ cd path/to/install
+    $ composer test
+
 Getting started with Silex
 --------------------------
 
