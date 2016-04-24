@@ -17,6 +17,14 @@
         "symfony/css-selector": "~2.8|3.0.*",
         "symfony/debug": "~2.8|3.0.*"
     },
+    "suggest": {
+        "symfony/finder": "For use in functional tests",
+        "symfony/form": "Dependency for Silex FormServiceProvider",
+        "symfony/process": "For use in functional tests",
+        "symfony/security": "Dependency for Silex SecurityServiceProvider",
+        "symfony/translation": "Dependency for Silex TranslationServiceProvider",
+        "symfony/validator": "Dependency for Silex ValidatorServiceProvider"
+    },
     "autoload": {
         "psr-0": { "": "src/" }
     },
